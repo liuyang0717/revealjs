@@ -1,0 +1,218 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+  <title>Worm-like Chain</title>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.7.0/css/reveal.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.7.0/css/theme/solarized.css">
+
+  <!-- Theme used for syntax highlighting of code -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.7.0/lib/css/zenburn.css">
+
+  <!-- Printing and PDF exports -->
+  <script>
+    var link = document.createElement('link');
+        link.rel = 'stylesheet';
+        link.type = 'text/css';
+        link.href = window.location.search.match(/print-pdf/gi) ? 'https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.7.0/css/print/pdf.css' : 'https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.7.0/css/print/paper.css';
+        document.getElementsByTagName('head')[0].appendChild(link);
+  </script>
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="./main.css">
+
+</head>
+
+<body>
+  <div class="reveal">
+    <div class="slides">
+      <section id="Title">
+        <h1>Worm-like Chain</h1>
+        <h3>reporter: liuyang</h3>
+      </section>
+      <section id="Introduction">
+        <h2>Introduction</h2>
+        <ul>
+          <li>The worm-like chain (WLC) model in polymer physics is used to describe the behavior of polymers that are semi-flexible.</li>
+          <li>The WLC model is the continuous version of the Kratky-Porod model.</li>
+          <li>Beyond that, an ideal chain (or freely-jointed chain) is the simplest model to describe polymers.</li>
+        </ul>
+      </section>
+      <section id="Contents">
+        <h2>Content</h2>
+        <ul>
+          <li><a href="#Freely-jointed-Chain-Model">Freely-jointed Chain Model</a></li>
+          <li><a href="#Worm-like-Chain-Model">Worm-like Chain Model</a></li>
+          <li><a href="#Reference">Reference</a></li>
+        </ul>
+      </section>
+      <section id="Freely-jointed-Chain-Model">
+        <section class="model-features">
+          <h2>Freely-jointed Chain Model</h2>
+          <h3>Feature</h3>
+          <ul>
+            <li>a random walk</li>
+            <li>neglects any kind of interactions among monomers</li>
+          </ul>
+        </section>
+        <section class="model-elements">
+          <h3>model elements</h3>
+          <div class="img-area">
+            <img src="./pictures/Ideal_chain_random_walk.svg" width="300">
+          </div>
+          <div class="text-area">
+            <script type="math/tex; mode=display">
+              L = N l
+            </script>
+            <script type="math/tex; mode=display">
+              \langle \overrightarrow{R} \rangle = \sum_{i=1}^{N} \langle \overrightarrow{r}_i \rangle = \overrightarrow{0}
+            </script>
+            <script type="math/tex; mode=display">
+              \sigma ^2 = \langle R_x^2 \rangle - \langle R_x \rangle ^2 = \langle R_x^2 \rangle - 0
+            </script>
+            <script type="math/tex; mode=display">
+              \langle R_x^2 \rangle = \langle R_y^2 \rangle = \langle R_z^2 \rangle = N \dfrac{l^2}{3}
+            </script>
+            <script type="math/tex; mode=display">
+              \langle \overrightarrow{R^2} \rangle = N l^2 = L l
+            </script>
+            <script type="math/tex; mode=display">
+              P(\overrightarrow{R}) = \left ( \dfrac{3}{2 \pi N l^2} \right)^{3/2} e^{- \dfrac{3 \overrightarrow{R}^2}{2Nl^2}}
+            </script>
+          </div>
+        </section>
+        <section class="model-force">
+          <h3>Entropic elasticity of an ideal chain</h3>
+          <script type="math/tex; mode=display">
+            S(\overrightarrow{R}) = k_B log(\Omega(\overrightarrow{R})) = k_B log(P(\overrightarrow{R})) + C_{st}
+          </script>
+          <script type="math/tex; mode=display">
+            0 = dU = \delta W + \delta Q
+          </script>
+          <script type="math/tex; mode=display">
+            \delta Q = T dS
+          </script>
+          <script type="math/tex; mode=display">
+            \delta W = \langle \overrightarrow{f}_{op} \rangle \cdot \overrightarrow{dR} = - \langle \overrightarrow{f} \rangle \cdot \overrightarrow{dR}
+          </script>
+          <script type="math/tex; mode=display">
+            \langle \overrightarrow{f} \rangle = T \dfrac{dS}{\overrightarrow{dR}} = \dfrac{k_BT}{P(\overrightarrow{R})} \dfrac{dP(\overrightarrow{R})}{\overrightarrow{dR}}
+          </script>
+          <script type="math/tex; mode=display">
+            \langle \overrightarrow{f} \rangle = - k_{B} T \dfrac{3 \overrightarrow{R}}{N l^2}
+          </script>
+        </section>
+      </section>
+      <section id="Worm-like-Chain-Model">
+        <section class="model-features">
+          <h2>Worm-like Chain Model</h2>
+          <h3>Feature</h3>
+          <ul>
+            <li>fairly stiff</li>
+            <li>successive segments pointing in roughly the same direction</li>
+            <li>persistence length within a few orders of magnitude of the polymer length</li>
+          </ul>
+        </section>
+        <section class="model-elements">
+          <h3>model elements</h3>
+          <div class="img-area">
+            <img src="./pictures/Worm-like_Chain.png" alt="Worm-like Chain" width="300">
+          </div>
+          <div class="text-area">
+            <script type="math/tex; mode=display">
+              \hat{t}(s) =  \dfrac{\partial \vec{r}(s)}{\partial s}
+            </script>
+            <script type="math/tex; mode=display">
+              \vec{R} = \int_{0}^{L_0} \hat{t}(s)ds
+            </script>
+            <script type="math/tex; mode=display">
+              E = \dfrac{1}{2}k_BT \int_0^{L_0}P \cdot \left(\dfrac{\partial^2 \hat{r}(s)}{\partial s^2} \right)^2 ds
+            </script>
+            <script type="math/tex; mode=display">
+              \langle \hat{t}(s) \cdot \hat{t}(0) \rangle = \langle cos \theta (s) \rangle = e^{-s/P}
+            </script>
+          </div>
+          <div class="long-math">
+            <script type="math/tex; mode=display">
+              {\displaystyle \langle R^{2}\rangle =\langle {\vec {R}}\cdot {\vec {R}}\rangle =\left\langle \int _{0}^{L_{0}}{\hat {t}}(s)ds\cdot \int _{0}^{L_{0}}{\hat {t}}(s')ds'\right\rangle =\int _{0}^{L_{0}}ds\int _{0}^{L_{0}}\langle {\hat {t}}(s)\cdot {\hat {t}}(s')\rangle ds'=\int _{0}^{L_{0}}ds\int _{0}^{L_{0}}e^{-\left|s-s'\right|/P}ds'}
+		    </script>
+            <script type="math/tex; mode=display">
+              \langle R^2 \rangle = 2 P L_0 \left [ 1- \dfrac{P}{L_0} \left (1- e^{-L_0/P} \right) \right]
+			</script>
+          </div>
+        </section>
+        <section class="model-force">
+          <h3>Stretching Worm-like Chain polymers</h3>
+          <script type="math/tex; mode=display">
+            {\displaystyle H=H_{\rm {elastic}}+H_{\rm {external}}={\frac {1}{2}}k_{B}T\int _{0}^{L_{0}}P\cdot \left({\frac {\partial ^{2}{\vec {r}}(s)}{\partial s^{2}}}\right)^{2}ds-xF}
+          </script>
+          <script type="math/tex; mode=display">
+            {\displaystyle {\frac {FP}{k_{B}T}}={\frac {1}{4}}\left(1-{\frac {x}{L_{0}}}\right)^{-2}-{\frac {1}{4}}+{\frac {x}{L_{0}}}}
+          </script>
+          <script type="math/tex; mode=display">
+            {\displaystyle {\frac {FP}{k_{B}T}}={\frac {1}{4}}\left(1-{\frac {x}{L_{0}}}\right)^{-2}-{\frac {1}{4}}+{\frac {x}{L_{0}}}-0.8\left({\frac {x}{L_{0}}}\right)^{2.15}}
+          </script>
+          <script type="math/tex; mode=display">
+            {\displaystyle H=H_{\rm {elastic}}+H_{\rm {enthalpic}}+H_{\rm {external}}={\frac {1}{2}}k_{B}T\int _{0}^{L_{0}}P\cdot \left({\frac {\partial {\vec {r}}(s)}{\partial s}}\right)^{2}ds+{\frac {1}{2}}{\frac {K_{0}}{L_{0}}}x^{2}-xF}
+          </script>
+          <script type="math/tex; mode=display">
+            {\displaystyle {\frac {FP}{k_{B}T}}={\frac {1}{4}}\left(1-{\frac {x}{L_{0}}}+{\frac {F}{K_{0}}}\right)^{-2}-{\frac {1}{4}}+{\frac {x}{L_{0}}}-{\frac {F}{K_{0}}}}
+          </script>
+        </section>
+      </section>
+      <section id="Reference">
+        <h2>Reference</h2>
+        <ul>
+          <li>https://en.wikipedia.org/wiki/Ideal_chain</li>
+          <li>https://en.wikipedia.org/wiki/Worm-like_chain</li>
+          <li>Kratky Porod model. Nataša Vučemilovid-Alagid</li>
+        </ul>
+      </section>
+    </div>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.7.0/lib/js/head.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.7.0/js/reveal.js"></script>
+
+  <script>
+    // More info about config & dependencies:
+    // - https://github.com/hakimel/reveal.js#configuration
+    // - https://github.com/hakimel/reveal.js#dependencies
+    Reveal.initialize({
+      center: false,
+      slideNumber: true,
+      math: {
+        mathjax: 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js',
+        config: 'TeX-AMS_HTML-full' // See http://docs.mathjax.org/en/latest/config-files.html
+      },
+      dependencies: [{
+          src: 'https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.7.0/plugin/markdown/marked.js'
+        },
+        {
+          src: 'https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.7.0/plugin/markdown/markdown.js'
+        },
+        {
+          src: 'https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.7.0/plugin/math/math.js',
+          async: true
+        },
+        {
+          src: 'https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.7.0/plugin/notes/notes.js',
+          async: true
+        },
+        {
+          src: 'https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.7.0/plugin/highlight/highlight.js',
+          async: true,
+          callback: function() {
+            hljs.initHighlightingOnLoad();
+          }
+        }
+      ]
+    });
+  </script>
+</body>
+
+</html>
