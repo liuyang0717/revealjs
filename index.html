@@ -2,217 +2,276 @@
 <html>
 
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-  <title>Worm-like Chain</title>
+	<title>Worm-like Chain</title>
 
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.7.0/css/reveal.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.7.0/css/theme/solarized.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.7.0/css/reveal.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.7.0/css/theme/solarized.css">
 
-  <!-- Theme used for syntax highlighting of code -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.7.0/lib/css/zenburn.css">
+	<!-- Theme used for syntax highlighting of code -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.7.0/lib/css/zenburn.css">
 
-  <!-- Printing and PDF exports -->
-  <script>
-    var link = document.createElement('link');
-        link.rel = 'stylesheet';
-        link.type = 'text/css';
-        link.href = window.location.search.match(/print-pdf/gi) ? 'https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.7.0/css/print/pdf.css' : 'https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.7.0/css/print/paper.css';
-        document.getElementsByTagName('head')[0].appendChild(link);
-  </script>
+	<!-- Printing and PDF exports -->
+	<script>
+		var link = document.createElement('link');
+		link.rel = 'stylesheet';
+		link.type = 'text/css';
+		link.href = window.location.search.match(/print-pdf/gi) ? 'https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.7.0/css/print/pdf.css' : 'https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.7.0/css/print/paper.css';
+		document.getElementsByTagName('head')[0].appendChild(link);
+	</script>
 
-  <!-- Custom CSS -->
-  <link rel="stylesheet" href="./main.css">
+	<!-- Custom CSS -->
+	<link rel="stylesheet" href="./main.css">
 
 </head>
 
 <body>
-  <div class="reveal">
-    <div class="slides">
-      <section id="Title">
-        <h1>Worm-like Chain</h1>
-        <h3>reporter: liuyang</h3>
-      </section>
-      <section id="Introduction">
-        <h2>Introduction</h2>
-        <ul>
-          <li>The worm-like chain (WLC) model in polymer physics is used to describe the behavior of polymers that are semi-flexible.</li>
-          <li>The WLC model is the continuous version of the Kratky-Porod model.</li>
-          <li>Beyond that, an ideal chain (or freely-jointed chain) is the simplest model to describe polymers.</li>
-        </ul>
-      </section>
-      <section id="Contents">
-        <h2>Content</h2>
-        <ul>
-          <li><a href="#Freely-jointed-Chain-Model">Freely-jointed Chain Model</a></li>
-          <li><a href="#Worm-like-Chain-Model">Worm-like Chain Model</a></li>
-          <li><a href="#Reference">Reference</a></li>
-        </ul>
-      </section>
-      <section id="Freely-jointed-Chain-Model">
-        <section class="model-features">
-          <h2>Freely-jointed Chain Model</h2>
-          <h3>Feature</h3>
-          <ul>
-            <li>a random walk</li>
-            <li>neglects any kind of interactions among monomers</li>
-          </ul>
-        </section>
-        <section class="model-elements">
-          <h3>model elements</h3>
-          <div class="img-area">
-            <img src="./pictures/Ideal_chain_random_walk.svg" width="300">
-          </div>
-          <div class="text-area">
-            <script type="math/tex; mode=display">
-              L = N l
-            </script>
-            <script type="math/tex; mode=display">
-              \langle \overrightarrow{R} \rangle = \sum_{i=1}^{N} \langle \overrightarrow{r}_i \rangle = \overrightarrow{0}
-            </script>
-            <script type="math/tex; mode=display">
-              \sigma ^2 = \langle R_x^2 \rangle - \langle R_x \rangle ^2 = \langle R_x^2 \rangle - 0
-            </script>
-            <script type="math/tex; mode=display">
-              \langle R_x^2 \rangle = \langle R_y^2 \rangle = \langle R_z^2 \rangle = N \dfrac{l^2}{3}
-            </script>
-            <script type="math/tex; mode=display">
-              \langle \overrightarrow{R^2} \rangle = N l^2 = L l
-            </script>
-            <script type="math/tex; mode=display">
-              P(\overrightarrow{R}) = \left ( \dfrac{3}{2 \pi N l^2} \right)^{3/2} e^{- \dfrac{3 \overrightarrow{R}^2}{2Nl^2}}
-            </script>
-          </div>
-        </section>
-        <section class="model-force">
-          <h3>Entropic elasticity of an ideal chain</h3>
-          <script type="math/tex; mode=display">
-            S(\overrightarrow{R}) = k_B log(\Omega(\overrightarrow{R})) = k_B log(P(\overrightarrow{R})) + C_{st}
-          </script>
-          <script type="math/tex; mode=display">
-            0 = dU = \delta W + \delta Q
-          </script>
-          <script type="math/tex; mode=display">
-            \delta Q = T dS
-          </script>
-          <script type="math/tex; mode=display">
-            \delta W = \langle \overrightarrow{f}_{op} \rangle \cdot \overrightarrow{dR} = - \langle \overrightarrow{f} \rangle \cdot \overrightarrow{dR}
-          </script>
-          <script type="math/tex; mode=display">
-            \langle \overrightarrow{f} \rangle = T \dfrac{dS}{\overrightarrow{dR}} = \dfrac{k_BT}{P(\overrightarrow{R})} \dfrac{dP(\overrightarrow{R})}{\overrightarrow{dR}}
-          </script>
-          <script type="math/tex; mode=display">
-            \langle \overrightarrow{f} \rangle = - k_{B} T \dfrac{3 \overrightarrow{R}}{N l^2}
-          </script>
-        </section>
-      </section>
-      <section id="Worm-like-Chain-Model">
-        <section class="model-features">
-          <h2>Worm-like Chain Model</h2>
-          <h3>Feature</h3>
-          <ul>
-            <li>fairly stiff</li>
-            <li>successive segments pointing in roughly the same direction</li>
-            <li>persistence length within a few orders of magnitude of the polymer length</li>
-          </ul>
-        </section>
-        <section class="model-elements">
-          <h3>model elements</h3>
-          <div class="img-area">
-            <img src="./pictures/Worm-like_Chain.png" alt="Worm-like Chain" width="300">
-          </div>
-          <div class="text-area">
-            <script type="math/tex; mode=display">
-              \hat{t}(s) =  \dfrac{\partial \vec{r}(s)}{\partial s}
-            </script>
-            <script type="math/tex; mode=display">
-              \vec{R} = \int_{0}^{L_0} \hat{t}(s)ds
-            </script>
-            <script type="math/tex; mode=display">
-              E = \dfrac{1}{2}k_BT \int_0^{L_0}P \cdot \left(\dfrac{\partial^2 \hat{r}(s)}{\partial s^2} \right)^2 ds
-            </script>
-            <script type="math/tex; mode=display">
-              \langle \hat{t}(s) \cdot \hat{t}(0) \rangle = \langle cos \theta (s) \rangle = e^{-s/P}
-            </script>
-          </div>
-          <div class="long-math">
-            <script type="math/tex; mode=display">
-              {\displaystyle \langle R^{2}\rangle =\langle {\vec {R}}\cdot {\vec {R}}\rangle =\left\langle \int _{0}^{L_{0}}{\hat {t}}(s)ds\cdot \int _{0}^{L_{0}}{\hat {t}}(s')ds'\right\rangle =\int _{0}^{L_{0}}ds\int _{0}^{L_{0}}\langle {\hat {t}}(s)\cdot {\hat {t}}(s')\rangle ds'=\int _{0}^{L_{0}}ds\int _{0}^{L_{0}}e^{-\left|s-s'\right|/P}ds'}
-		    </script>
-            <script type="math/tex; mode=display">
-              \langle R^2 \rangle = 2 P L_0 \left [ 1- \dfrac{P}{L_0} \left (1- e^{-L_0/P} \right) \right]
-			</script>
-          </div>
-        </section>
-        <section class="model-force">
-          <h3>Stretching Worm-like Chain polymers</h3>
-          <script type="math/tex; mode=display">
-            {\displaystyle H=H_{\rm {elastic}}+H_{\rm {external}}={\frac {1}{2}}k_{B}T\int _{0}^{L_{0}}P\cdot \left({\frac {\partial ^{2}{\vec {r}}(s)}{\partial s^{2}}}\right)^{2}ds-xF}
-          </script>
-          <script type="math/tex; mode=display">
-            {\displaystyle {\frac {FP}{k_{B}T}}={\frac {1}{4}}\left(1-{\frac {x}{L_{0}}}\right)^{-2}-{\frac {1}{4}}+{\frac {x}{L_{0}}}}
-          </script>
-          <script type="math/tex; mode=display">
-            {\displaystyle {\frac {FP}{k_{B}T}}={\frac {1}{4}}\left(1-{\frac {x}{L_{0}}}\right)^{-2}-{\frac {1}{4}}+{\frac {x}{L_{0}}}-0.8\left({\frac {x}{L_{0}}}\right)^{2.15}}
-          </script>
-          <script type="math/tex; mode=display">
-            {\displaystyle H=H_{\rm {elastic}}+H_{\rm {enthalpic}}+H_{\rm {external}}={\frac {1}{2}}k_{B}T\int _{0}^{L_{0}}P\cdot \left({\frac {\partial {\vec {r}}(s)}{\partial s}}\right)^{2}ds+{\frac {1}{2}}{\frac {K_{0}}{L_{0}}}x^{2}-xF}
-          </script>
-          <script type="math/tex; mode=display">
-            {\displaystyle {\frac {FP}{k_{B}T}}={\frac {1}{4}}\left(1-{\frac {x}{L_{0}}}+{\frac {F}{K_{0}}}\right)^{-2}-{\frac {1}{4}}+{\frac {x}{L_{0}}}-{\frac {F}{K_{0}}}}
-          </script>
-        </section>
-      </section>
-      <section id="Reference">
-        <h2>Reference</h2>
-        <ul>
-          <li>https://en.wikipedia.org/wiki/Ideal_chain</li>
-          <li>https://en.wikipedia.org/wiki/Worm-like_chain</li>
-          <li>Kratky Porod model. Nataša Vučemilovid-Alagid</li>
-        </ul>
-      </section>
-    </div>
-  </div>
+	<div class="reveal">
+		<div class="slides">
+			<!-- Title -->
+			<section>
+				<h1>Worm-Like Chain</h1>
+				<h3>Reporter: liuyang</h3>
+			</section>
+			<!-- Contents -->
+			<section>
+				<h2>Contents</h2>
+				<ul>
+					<li>Polymer Physics</li>
+					<li>Ideal Chains</li>
+					<li>Freely Jointed Chain</li>
+					<li>Worm Like Chain</li>
+					<li>Reference</li>
+				</ul>
+			</section>
+			<!-- Polymer Physics -->
+			<section>
+				<h2>Polymer Physics</h2>
+				<ul>
+					<li>Polymer physics is the field of physics that studies polymers, their fluctuations, mechanical properties, as well as the kinetics of reactions involving degradation and polymerisation of polymers and monomers respectively.</li>
+					<li>Polymers are large molecules and thus are very complicated for solving using a deterministic method. Yet, statistical approaches can yield results and are often pertinent, since large polymers are describable efficiently in the thermodynamic limit of infinitely many monomers.</li>
+				</ul>
+			</section>
+			<!-- Ideal Chains -->
+			<section>
+				<h2>Ideal Chains</h2>
+				<ul>
+					<li>The freely-jointed chain is the simplest model of a plolymer. In this model, fixed length polymer segments are linearly connected, and all bond and torsion angles are equiprobable. The polymer can therefore be described by a simple random walk and ideal chain.</li>
+					<li>The freely-rotating chain improves the freely-jointed chain model by taking into account that polymer segments make a fixed bond angle to neighbouring units because of specific chemical bonding. Under this fixed angle, the segments are still free to rotate and all torsion angles are equally likely.</li>
+					<li>The hindered rotation model assumes that the torsion angle is hindered by a potential energy. This makes the probability of each torsion angle proportional to a Boltzmann factor.</li>
+					<li>In the rotational isomeric state model, the allowed torsion angles are determined by the positions of the minima in the rotational potential energy. Bond lengths and bond angles are constant.</li>
+					<li>The Worm-like chain is a more complex model. It takes the persistence length into account. Polymers are not completely flexible; bending them requires energy. At the length scale below persistence length, the polymer behaves more or less like a rigid rod.</li>
+				</ul>
+			</section>
+			<!-- Freely Jointed Chain -->
+			<section>
+				<h2>Freely Jointed Chain</h2>
+				<ul>
+					<li>A freely-jointed chain is the simplest model to describle polymers, such as nucleic acids and proteins. It only assumes a polymer as a random walk and neglects any kind of interactions among monomers. Although it is simple, its generality gives insight about the physics of polymers.</li>
+					<li>
+						In this very simple approach where no interactions between mers are considered, the energy of the polymer is taken to be independent of its shape, which means that at thermodynamic equilibrium, all of its shape configurations are equally likely to occur as the polymer fluctuates in time, according to the Maxwell-Boltzmann distribution.
+					</li>
+				</ul>
+			</section>
+			<!-- The model -->
+			<section>
+				<img src="./pictures/Ideal_chain_random_walk.svg" alt="" width="250">
+				<ul>
+					<li>
+						$N$ mers form the polymer, whose total unfolded length is: $L=Nl$, where $N$ is the number of mers.
+					</li>
+					<li>
+						Let us call $\vec{R}$ the total end to end vector of an ideal chain and ${\vec r}_{1},\ldots ,{\vec r}_{N}$ the vectors corresponding to individual mers. Those random vectors have components in the three directions of space. Most of the expressions given in this article assume that the number of mers $N$ is large, so that the central limit theorem applies. The figure below shows a sketch of a (short) ideal chain.
+					</li>
+					<li>The two ends of the chain are not coincident, but they fluctuate around each other, so that of course: \[\langle {\vec {R}}\rangle =\Sigma _{{i=1}}^{N}\langle {\vec r}_{i}\rangle ={\vec 0}~ \]</li>
+				</ul>
+			</section>
+			<section>
+				<ul>
+					<li>Since ${\vec r}_{1},\ldots ,{\vec r}_{N}$ are independent, it follows from the Central limit theorem that $\vec{R}$ is distributed according to a normal distribution (or gaussion distribution): precisely, in 3D, $R_x, R_y$, and $R_z$ are distributed according to a normal distribution of mean 0 and of variance: \[\sigma ^{2}=\langle R_{x}^{2}\rangle -\langle R_{x}\rangle ^{2}=\langle R_{x}^{2}\rangle -0 \] \[\langle R_{x}^{2}\rangle =\langle R_{y}^{2}\rangle =\langle R_{z}^{2}\rangle =N\,{\frac {l^{2}}{3}} \] </li>
+					<li>So that $\langle {\vec {R^{2}}}\rangle =N\,l^{2}=L\,l~$. The end to end vector of the chain is distributed according to the following probability density function:\[P({\vec R})=\left({\frac {3}{2\pi Nl^{2}}}\right)^{{3/2}}e^{{-{\frac {3{\vec  R}^{2}}{2Nl^{2}}}}} \] </li>
+					<li>
+						The average end-to-end distance of the polymer is: \[{\sqrt {\langle {\vec {R^{2}}}\rangle }}={\sqrt N}\,l={\sqrt {L\,l}}~ \]
+					</li>
+					<li>
+						A quantity frequently used in polymer physics is the radius of gyration: \[ {\mathit {R}}_{G}={\frac {{\sqrt N}\,l}{{\sqrt  6}\ }}\]
+					</li>
+					<li>It is worth nothing that the above average end-to-end distance, which in the case of this simple model is also the typical amplitude of the system's fluctuations, becomes negligible compared to the total unfolded length of the polymer $Nl$ at the thermodynamic limit. This result is a general property of statistical systems.</li>
+				</ul>
+			</section>
+			<!-- Entropic elasticity of an ideal chain -->
+			<!-- Ideal chain under length constraint -->
+			<section>
+				<ul>
+					<li>The case of an ideal chain whose two ends are attached to fixed points will be considered in this sub-section. The vector $\vec{R}$ joining these two points characterizes the macroscopic state (or macro-state) of the ideal chain. Each macro-state corresponds a certain number of micro-states, that we will call $\Omega ({\vec R})$(micro-states are defined in the introduction to this section). Since the ideal chain's energy is constant, each of these micro-states is equally likely to occur. The entropy associated to a macro-state is thus equal to:\[S({\vec R})=k_{B}\log(\Omega ({\vec R}))\] where $k_B$ is Boltzmann's constant</li>
+					<li>The above expression gives the absolute(quantum) entropy of the system. A precise determination of $\Omega ({\vec R})$ would require a quantum model for the ideal chain, which is beyond the scope of this article. However, we have already calculated the probablilty density $P({\vec R})$ associated with the end-to-end vector of the unconstrainted indeal chain, above.</li>
+					<li>
+						Since all micro-states of the ideal chain are equally likely to occur, $P({\vec R})$ is proportional to $\Omega ({\vec R})$. This leads to the following expression for the classical(relative) entropy of the ideal chain:
+						\[S({\vec R})=k_{B}\log(P({\vec R}))+C_{{st}} \] where $C_{st}$ is a fixed constant.
+					</li>
+				</ul>
+			</section>
+			<section>
+				<ul>
+					<li>
+						Let us call ${\vec F}$ the force exerted by the chain on the point to which its end is attached. From the above expression of the entropy, we can deduce an expression of this force. Suppose that, instead of being fixed, the positions of the two ends of the ideal chain are now controlled by an operator. The oprator controls the evolution of the end to end vector${\vec R}$. If the operator changes ${\vec R}$ by a tiny amount ${\vec{dR}}$, then the variation of internal energy of the chain is zero, since the energy of the chain is constant. This condition can be written as:\[0=dU=\delta W+\delta Q~ \]
+					</li>
+					<li>
+						$\delta W$ is defined as the elementary amount of mechanical work transferred by the operator to the ideal chain, and $\delta Q$ is defined as the elementary amount of heat transferred by the solvent to the ideal chain. Now, if we assume that the transformation inposed by the oprator on the system is quasistanic, then the system's transformation will be time-reversible, and we can assume that during its passage from macro-state ${\vec R}$ to macro-state ${\vec R}$ + ${\vec{dR}}$, the system passes through a series of thermodynamic equilibrium macro-states. This has two consequences:
+						<ul>
+							<li>
+								first, the amount of heat received by the system during the transformation can be tied to the variation of its entropy:\[\delta Q=TdS~\] where T is the temperature of the chain.
+							</li>
+							<li>
+								second, in order for the transformation to remain infinitely slow, the mean force exerted by the operator on the end points of the chain must balance the mean force exerted by the chain on its end points. Calling ${\vec f}_{{op}}$ the force exerted by the operator and ${\vec f}$ the force exerted by the chain, we have:\[\delta W=\langle {\vec f}_{{op}}\rangle \cdot {\vec {dR}}=-\langle {\vec f}\rangle \cdot {\vec {dR}}~ \]
+							</li>
+							<li>We are thus led to:\[\langle {\vec f}\rangle =T{\frac {dS}{{\vec {dR}}}}={\frac {k_{B}T}{P({\vec R})}}{\frac {dP({\vec R})}{{\vec {dR}}}} =-k_{B}T{\frac {3{\vec R}}{Nl^{2}}}~ \]
+							</li>
+						</ul>
+					</li>
+				</ul>
+			</section>
+			<section>
+				<ul>
+					<li>
+						The above equation is the equation of state of the ideal chain. Since the expression depends on the central limit theorem, it is only exact in the limit of polymers containing a large number of monomers. It is also only valid for small end-to-end distances, relative to the overall polymer contour length, where the behavior is like a hookean spring. Behavior over larger force ranges can be modeled using a canonical ensemble treatment identical to magnetization of paramagnetic spins. For the arbitrary forces the extension-force dependence will be given by Langevin-function ${\displaystyle {\mathcal {L}}}$:
+						\[{\displaystyle {\frac {R}{Nl}}=\coth \left({\frac {fl}{k_{B}T}}\right)-{\frac {k_{B}T}{fl}}={\mathcal {L}}\left({\frac {fl}{k_{B}T}}\right),} \] where the extension is ${\displaystyle R=|{\vec {R}}|}$.
+					</li>
+					<li>For the arbitrary extensions the force-extension dependence can be approximated by:\[{\displaystyle {\frac {fl}{k_{B}T}}={\mathcal {L}}^{-1}\left({\frac {R}{Nl}}\right)\approx 3{\frac {R}{Nl}}+{\frac {1}{5}}\left({\frac {R}{Nl}}\right)^{2}\sin \left({\frac {7R}{2Nl}}\right)+{\frac {\left({\frac {R}{Nl}}\right)^{3}}{1-{\frac {R}{Nl}}}}} \] where ${\displaystyle {\mathcal {L}}^{-1}}$ is the inverse Langevin function, N is the number of bonds in the molecule(therefore if the molecule has N bonds it has N+1 monomers making up the molecule.).</li>
+				</ul>
+			</section>
+			<!-- Worm Like Chain -->
+			<section>
+				<h2>Worm Like Chain</h2>
+				<ul>
+					<li>The worm-like chain model in polymer physics is used to describle the behavior of polymers that are semi-flexible: fairly stiff with successive segments pointing in roughly the same direction, and with persistence length within a few orders of magnitude of the polymer length.</li>
+					<li>
+						The WLC model envisions a continuously flexible isotropic rod. This is in contrast to the freely-jointed chain model, which is only flexible between discrete freely hinged segments. The model is particularly suited for describling stiffer polymers, with succeessive segments displaying a sort of cooperativity: nearby segments are roughly aligned. At room temperature, the polymer adopts a smoothly curved conformation; at T=0k, the polymer adopts a rigid rod conformation.
+					</li>
+				</ul>
+			</section>
+			<!-- Model elements -->
+			<section>
+				<img src="./pictures/Worm-like_Chain.png" alt="" width="300">
+				<p>An illustration of the WLC model, with position and unit tangent vectors as shown.</p>
+				<ul>
+					<li>For a polymer of maximum length $L_0$, parametrize the path of the polymer as $s\in (0,L_0)$. Allow $\hat{t}(s)$ to be the unit tangent vector to the chain as point $s$, and $\vec{r} (s)$ to be the position vector along the chain, as shown to the right. Then: \[ \displaystyle {\hat {t}}(s)\equiv {\frac {\partial {\vec {r}}(s)}{\partial s}} \] and the end-to-end distance \[ \displaystyle {\vec {R}}=\int _{0}^{L_{0}}{\hat {t}}(s)ds \].</li>
+				</ul>
+			</section>
+			<section>
+				<ul>
+					<li>
+						The energy associated with the bending of the polymer can be written as: \[ \displaystyle E={\frac {1}{2}}k_{B}T\int _{0}^{L_{0}}P\cdot \left({\frac {\partial ^{2}{\vec {r}}(s)}{\partial s^{2}}}\right)^{2}ds \] where $P$ is the polymer's characterstic persistence length, $k_B$ is the Boltzmann constant, and $T$ is the absolute temperature. At finite tmeperature, the end-to-end distance of the polymer will be significantly shorter than the maximum length $L_0$. This is caused by thermal fluctuations, which result in a coiled, random configuration of the undisturbed polymer.
+					</li>
+					<li>
+						The polymer's orientation correlation function can then be solved for, and it follows an exponential decay with decay constant 1/p: \[ \displaystyle \langle {\hat {t}}(s)\cdot {\hat {t}}(0)\rangle =\langle \cos \;\theta (s)\rangle =e^{-s/P}\, \] A useful value is the mean square end-to-end distance of the polymer: \[\displaystyle \langle R^{2}\rangle =\langle {\vec {R}}\cdot {\vec {R}}\rangle =\left\langle \int _{0}^{L_{0}}{\hat {t}}(s)ds\cdot \int _{0}^{L_{0}}{\hat {t}}(s')ds'\right\rangle =\int _{0}^{L_{0}}ds\int _{0}^{L_{0}}\langle {\hat {t}}(s)\cdot {\hat {t}}(s')\rangle ds'=\int _{0}^{L_{0}}ds\int _{0}^{L_{0}}e^{-\left|s-s'\right|/P}ds' \] \[\displaystyle \langle R^{2}\rangle =2PL_{0}\left[1-{\frac {P}{L_{0}}}\left(1-e^{-L_{0}/P}\right)\right] \]
+					</li>
+					<li>
+						Note that in the limit of $\displaystyle L_0 \gg P$, then $\displaystyle \langle R^{2}\rangle =2PL_{0}$. This can be used to show that a Kuhn segment is equal to twice the persistence length of a worm-like chain. In the limit of $\displaystyle L_{0} \ll P$, then $\displaystyle \langle R^{2}\rangle =L_{0}^{2}$, and the polymer displays rigid rod behavior. The figure to the right shows the crossover from flexible to stiff behavior as the persistence length increases.
+					</li>
+				</ul>
+			</section>
+			<!-- Biological relevance -->
+			<section>
+				<img src="./pictures/Worm-like_Chain_Model_vs._DNA.svg" alt="" width="300">
+				<ul>
+					<li>
+						Experimental data from the stretching of Lambda phage DNA is shown to the right, with force measurements determined by analysis of Brownian fluctuations of a bead attached to the DNA. A persistence length of 51.35 nm and a contour length of 1318 nm were used for the model, which is depicted by the solid line.
+					</li>
+				</ul>
+			</section>
+			<!-- Strenching worm-like chain polymers -->
+			<section>
+				<ul>
+					<li>Upon strentching, the accessible spectrum of thermal fluctuations reduces, which causes an entropic force acting against the external elogation. This entropic force can be estimated from considering the total energy of the polymer:
+						\[\displaystyle H=H_{\rm {elastic}}+H_{\rm {external}}={\frac {1}{2}}k_{B}T\int _{0}^{L_{0}}P\cdot \left({\frac {\partial ^{2}{\vec {r}}(s)}{\partial s^{2}}}\right)^{2}ds-xF \].</li>
+					<li>
+						Here, the coutour length is represented by $L_0$, the persistence length by $P$, the extension is represented by $x$, and external force is represented by $F$.
+					</li>
+				</ul>
+			</section>
+			<section>
+				<ul>
+					<li>
+						Laboratory tools such as atomic force microscopy(AFM) and optical tweezers have been used to characterize the force-dependent stretching behavior of biological polymers. An interpolation formula that approximates the force-extension behavior with about 15% relative error is: \[\displaystyle {\frac {FP}{k_{B}T}}={\frac {1}{4}}\left(1-{\frac {x}{L_{0}}}\right)^{-2}-{\frac {1}{4}}+{\frac {x}{L_{0}}} \]
+					</li>
+					<li>
+						A more accurate approximation for the force-extension behavior with about 1% relative error is:
+						\[\displaystyle {\frac {FP}{k_{B}T}}={\frac {1}{4}}\left(1-{\frac {x}{L_{0}}}\right)^{-2}-{\frac {1}{4}}+{\frac {x}{L_{0}}}-0.8\left({\frac {x}{L_{0}}}\right)^{2.15} \]
+					</li>
+				</ul>
+			</section>
+			<section>
+				<ul>
+					<li>
+						The elastic response from extension cannot be neglected: polymers elongate due to external forces. This is enthalpic compliance is accounted for the material parameter $K_0$, and the system yields the following Hamiltonian for significantly extended polymers: \[\displaystyle H=H_{\rm {elastic}}+H_{\rm {enthalpic}}+H_{\rm {external}}={\frac {1}{2}}k_{B}T\int _{0}^{L_{0}}P\cdot \left({\frac {\partial {\vec {r}}(s)}{\partial s}}\right)^{2}ds+{\frac {1}{2}}{\frac {K_{0}}{L_{0}}}x^{2}-xF \]
+					</li>
+					<li>
+						For the low-force regime (F$\le$ about 10 pN), the following interpolation formula was derived: \[\displaystyle {\frac {FP}{k_{B}T}}={\frac {1}{4}}\left(1-{\frac {x}{L_{0}}}+{\frac {F}{K_{0}}}\right)^{-2}-{\frac {1}{4}}+{\frac {x}{L_{0}}}-{\frac {F}{K_{0}}} \]</li>
+					<li>
+						For the higher-force regime, where the polymer is significantly extended, the following approximation is valid: \[\displaystyle x=L_{0}\left(1-{\frac {1}{2}}\left({\frac {k_{B}T}{FP}}\right)^{1/2}+{\frac {F}{K_{0}}}\right) \]
+					</li>
+					<li>
+						More accurate interpolation formulas for the force-extension and extension-force behaviors are: \[\displaystyle {\frac {FP}{k_{B}T}}={\frac {1}{4}}\left(1-{\frac {x}{L_{0}}}+{\frac {F}{K_{0}}}\right)^{-2}-{\frac {1}{4}}+{\frac {x}{L_{0}}}-{\frac {F}{K_{0}}}-0.8\left({\frac {x}{L_{0}}}-{\frac {F}{K_{0}}}\right)^{2.15} \]
+					</li>
+				</ul>
+			</section>
+			<section>
+				<ul>
+					<li>The conformational entropy of the whole polymer($G_{WLC}$):\[{\displaystyle {G_{WLC}} = {\frac{1}{4 \beta L_p}}{\frac{x^2(3L-2x)}{L(L-x)}}} \] </li>
+				</ul>
+			</section>
+			<section>
+				<h2>Reference</h2>
+				<ul>
+					<li>https://en.wikipedia.org/wiki/Polymer_physics</li>
+					<li>https://en.wikipedia.org/wiki/Ideal_chain</li>
+					<li>https://en.wikipedia.org/wiki/Worm-like_chain</li>
+				</ul>
+			</section>
+		</div>
+	</div>
 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.7.0/lib/js/head.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.7.0/js/reveal.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.7.0/lib/js/head.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.7.0/js/reveal.js"></script>
 
-  <script>
-    // More info about config & dependencies:
-    // - https://github.com/hakimel/reveal.js#configuration
-    // - https://github.com/hakimel/reveal.js#dependencies
-    Reveal.initialize({
-      center: false,
-      slideNumber: true,
-      math: {
-        mathjax: 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js',
-        config: 'TeX-AMS_SVG' // See http://docs.mathjax.org/en/latest/config-files.html
-      },
-      dependencies: [{
-          src: 'https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.7.0/plugin/markdown/marked.js'
-        },
-        {
-          src: 'https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.7.0/plugin/markdown/markdown.js'
-        },
-        {
-          src: 'https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.7.0/plugin/math/math.js',
-          async: true
-        },
-        {
-          src: 'https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.7.0/plugin/notes/notes.js',
-          async: true
-        },
-        {
-          src: 'https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.7.0/plugin/highlight/highlight.js',
-          async: true,
-          callback: function() {
-            hljs.initHighlightingOnLoad();
-          }
-        }
-      ]
-    });
-  </script>
+	<script>
+		// More info about config & dependencies:
+		// - https://github.com/hakimel/reveal.js#configuration
+		// - https://github.com/hakimel/reveal.js#dependencies
+		Reveal.initialize({
+			center: true,
+			slideNumber: true,
+			math: {
+				mathjax: 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js',
+				config: 'TeX-AMS_SVG' // See http://docs.mathjax.org/en/latest/config-files.html
+			},
+			dependencies: [{
+					src: 'https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.7.0/plugin/markdown/marked.js'
+				},
+				{
+					src: 'https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.7.0/plugin/markdown/markdown.js'
+				},
+				{
+					src: 'https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.7.0/plugin/math/math.js',
+					async: true
+				},
+				{
+					src: 'https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.7.0/plugin/notes/notes.js',
+					async: true
+				},
+				{
+					src: 'https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.7.0/plugin/highlight/highlight.js',
+					async: true,
+					callback: function() {
+						hljs.initHighlightingOnLoad();
+					}
+				}
+			]
+		});
+	</script>
 </body>
 
 </html>
